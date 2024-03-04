@@ -137,11 +137,9 @@ var numArr: [Int] = Array(repeating: 0, count: 5)
 
 // [1] Rewrite this code to use a loop
 /* BEGIN CODE */
-numArr[0] = 10
-numArr[1] = 20
-numArr[2] = 30
-numArr[3] = 40
-numArr[4] = 50
+for i in 0...4 {
+    numArr[i] = ((i+1) * 10)
+}
 /* END CODE */
 print("numArr: \(numArr)")
 // <-- [RUN HERE] The output should be unchanged
@@ -161,7 +159,9 @@ var messages: [String: String] = [
 //     Reference the docs for the desired output format.
 print("\nMessage Data:")
 /* BEGIN CODE */
-
+for entry in messages {
+    print("\(entry.key): \(entry.value)")
+}
 /* END CODE */
 // <-- [RUN HERE] Does this seem like the order of a normal conversation?
 //                Perhaps we're missing some data about which messages
@@ -184,27 +184,47 @@ print("Goodbye!")
 //     Refer to the docs for tips & tricks.
 print("\n(WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+var count: Int = 0
+while count < messageOrder.count {
+    if let message = messages[messageOrder[count]] {
+        print(message)
+        count += 1
+    }
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [4] Do the same thing, but with a repeat-while loop
 print("\n(REPEAT-WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+var count2: Int = 0
+repeat {
+    if let message = messages[messageOrder[count2]] {
+        print(message)
+        count2 += 1
+    }
+} while count2 < messageOrder.count
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [5] Do the same thing, but with a for loop using default iterator
 print("\n(FOR ITERATOR) MESSAGES: ")
 /* BEGIN CODE */
-
+for i in messageOrder {
+    if let message = messages[i] {
+        print(message)
+    }
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [6] Do the same thing, but with a for loop using a range
 print("\n(FOR RANGE) MESSAGES: ")
 /* BEGIN CODE */
-
+for i in 0...messageOrder.count-1 {
+    if let message = messages[messageOrder[i]] {
+        print(message)
+    }
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
