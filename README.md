@@ -1,3 +1,5 @@
+[← Module 1](https://github.com/gtiosclub/bootcamp-module-1) • [Module 3 →](https://github.com/gtiosclub/bootcamp-module-3)
+
 # Module 2: More Swift Basics
 
 In this module, we'll go over collections, loops, functions and closures.
