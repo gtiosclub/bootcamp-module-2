@@ -15,16 +15,14 @@ Things you'll accomplish:
 - [ ] Utilize closures for extending functions
 - [ ] Utilize closures for handling async data
 
+
 ## Getting Started
 
-First, fork the repo into your own Github account and clone the forked
-repo onto your local device.
+Clone this repo to your local device. 
 
-Refer to [module 0](https://github.com/gtiosclub/bootcamp-module-0) for
-instructions on how to do so.
+Refer to the [Assignments](https://gt-ios-club.notion.site/Assignments-1b6cb97d5c7b467d9bc176de64578453?pvs=4) notion page on how to do so.
 
-Once you've cloned the repo, open the MoreSwiftBasics playgound if you
-haven't already.
+Once you've cloned the repo, open the MoreSwiftBasics playgound.
 
 Within MoreSwiftBasics you should see the following playground files:
 
