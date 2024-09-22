@@ -242,7 +242,9 @@ print("Alphabetical:   \(cities)\n")
 // [1] Use the .sort(by:) function to sort the array from shortest name to
 //     longest. Check the docs for reference material if needed
 /* BEGIN CODE */
-
+cities.sort(by: { (city1: String, city2: String) -> Bool in
+    return city1.count < city2.count
+})
 /* END CODE */
 print("Length (.sort): \(cities)")
 
@@ -262,10 +264,22 @@ for i in 0 to (arr_length - 1):
  arr[i] = arr[min]
  arr[min] = temp
 */
+var min: Int = 0
+var temp: String = ""
 func selectionSort(_ input: [String]) -> [String] {
     var arr: [String] = input
     /* BEGIN CODE */
-    
+    for i in 0..<arr.count {
+        min = i
+        for j in (i + 1)..<arr.count {
+            if arr[j].count < arr[i].count {
+                min = j
+            }
+        }
+        temp = arr[i]
+        arr[i] = arr[min]
+        arr[min] = temp
+    }
     /* END CODE */
     return arr
 }
