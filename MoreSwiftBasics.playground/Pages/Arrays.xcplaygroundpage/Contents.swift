@@ -115,8 +115,6 @@ print("arr3 after:  \(arr3), arrNil after:  \(arrNil)")
 print("")
 
 
-
-
 print("*** ARRAY PRACTICE ***")
 // Now that you've explored how arrays work in Swift, it's time to practice.
 // TODO: Refer to Module 2 docs to implement this part
@@ -125,24 +123,22 @@ var animalArray: [String] = ["Lion", "Zebra", "Elephant", "Turtle"]
 var optionalArray: [Int]?
 
 // [2] Is there a logical error with accessing index `4` in a 4-element array?
-print("4th element of animalArray: \(animalArray[4])")
+print("4th element of animalArray: \(animalArray[3])")
 
 // [3] The operation below is quite dangerous. How can we make it safer?
-let unwrappedArray = optionalArray!
-print(unwrappedArray)
-
+if let unwrappedArray = optionalArray {
+    print(unwrappedArray)
+} else {
+    print ("optionalArray is null.")
+}
 
 // [4] Initialize optionalArray
-/* BEGIN CODE */
-
-/* END CODE */
+optionalArray = []
 
 // [5, 6, 7] Add elements to optionalArray
-/* BEGIN CODE */
-
-/* END CODE */
+optionalArray?.append(10)
+optionalArray?.append(contentsOf: [6,7,8,9])
+optionalArray?.insert(55, at: 2)
 
 // [8] Print the 5th element of optionalArray
-/* BEGIN CODE */
-
-/* END CODE */
+print(optionalArray?[4] ?? "optionalArray is nil.")
