@@ -137,11 +137,11 @@ var numArr: [Int] = Array(repeating: 0, count: 5)
 
 // [1] Rewrite this code to use a loop
 /* BEGIN CODE */
-numArr[0] = 10
-numArr[1] = 20
-numArr[2] = 30
-numArr[3] = 40
-numArr[4] = 50
+var i : Int = 0
+while(i<5){
+    numArr = [i]
+    i += 1
+}
 /* END CODE */
 print("numArr: \(numArr)")
 // <-- [RUN HERE] The output should be unchanged
@@ -161,6 +161,9 @@ var messages: [String: String] = [
 //     Reference the docs for the desired output format.
 print("\nMessage Data:")
 /* BEGIN CODE */
+for (ID,message) in messages{
+    print(ID + ": " + message)
+}
 
 /* END CODE */
 // <-- [RUN HERE] Does this seem like the order of a normal conversation?
@@ -184,27 +187,42 @@ print("Goodbye!")
 //     Refer to the docs for tips & tricks.
 print("\n(WHILE) MESSAGES: ")
 /* BEGIN CODE */
+var x : Int = 0
+while(x<6){
+    print(messages[messageOrder[x]] ?? "")
+    x+=1
+}
 
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
+
 // [4] Do the same thing, but with a repeat-while loop
 print("\n(REPEAT-WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+var y : Int = 0
+repeat{
+    print(messages[messageOrder[y]] ?? "")
+    y+=1
+} while(y<6)
+        
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [5] Do the same thing, but with a for loop using default iterator
 print("\n(FOR ITERATOR) MESSAGES: ")
 /* BEGIN CODE */
-
+for (message) in messageOrder{
+    print(messages[message] ?? "")
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [6] Do the same thing, but with a for loop using a range
 print("\n(FOR RANGE) MESSAGES: ")
 /* BEGIN CODE */
-
+for (z) in 0...5{
+    print(messages[messageOrder[z]] ?? "")
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
