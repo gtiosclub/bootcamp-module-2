@@ -125,24 +125,28 @@ var animalArray: [String] = ["Lion", "Zebra", "Elephant", "Turtle"]
 var optionalArray: [Int]?
 
 // [2] Is there a logical error with accessing index `4` in a 4-element array?
-print("4th element of animalArray: \(animalArray[4])")
+print("4th element of animalArray: \(animalArray[3])")
 
 // [3] The operation below is quite dangerous. How can we make it safer?
-let unwrappedArray = optionalArray!
-print(unwrappedArray)
-
+if let unwrappedArray = optionalArray {
+    print("optionalArray is nil.")
+}
 
 // [4] Initialize optionalArray
 /* BEGIN CODE */
-
+optionalArray = []
 /* END CODE */
 
 // [5, 6, 7] Add elements to optionalArray
 /* BEGIN CODE */
-
+optionalArray?.append(10)
+optionalArray?.append(contentsOf: [6, 7, 8, 9])
+optionalArray?.insert(55, at: 2)
 /* END CODE */
 
 // [8] Print the 5th element of optionalArray
 /* BEGIN CODE */
-
+if let unwrappedArray = optionalArray, optionalArray.count > 4{
+    print(optionalArray[4])
+}
 /* END CODE */

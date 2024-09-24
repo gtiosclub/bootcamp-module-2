@@ -142,6 +142,9 @@ numArr[1] = 20
 numArr[2] = 30
 numArr[3] = 40
 numArr[4] = 50
+for nums in 1...numArr.count {
+    numArr[nums - 1] = nums * 10
+}
 /* END CODE */
 print("numArr: \(numArr)")
 // <-- [RUN HERE] The output should be unchanged
@@ -161,7 +164,9 @@ var messages: [String: String] = [
 //     Reference the docs for the desired output format.
 print("\nMessage Data:")
 /* BEGIN CODE */
-
+for (ids, message) in messages {
+    print("\(ids): \(message)")
+}
 /* END CODE */
 // <-- [RUN HERE] Does this seem like the order of a normal conversation?
 //                Perhaps we're missing some data about which messages
@@ -184,27 +189,48 @@ print("Goodbye!")
 //     Refer to the docs for tips & tricks.
 print("\n(WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+var i : Int = 0
+while i < messageOrder.count {
+    let id = messageOrder[i]
+        if let message = messages[id] {
+            print(message)
+        }
+        i += 1
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [4] Do the same thing, but with a repeat-while loop
 print("\n(REPEAT-WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+var a : Int = 0
+repeat {
+    if let message = messages[messageOrder[a]] {
+        print(message)
+    }
+    a += 1
+} while i < messageOrder.count
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [5] Do the same thing, but with a for loop using default iterator
 print("\n(FOR ITERATOR) MESSAGES: ")
 /* BEGIN CODE */
-
+for ids in messageOrder {
+    if let messageContent = messages[ids] {
+        print(messageContent)
+    }
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [6] Do the same thing, but with a for loop using a range
 print("\n(FOR RANGE) MESSAGES: ")
 /* BEGIN CODE */
-
+for positions in 0..<messageOrder.count {
+    if let message = messages[messageOrder[positions]] {
+        print(message)
+    }
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
