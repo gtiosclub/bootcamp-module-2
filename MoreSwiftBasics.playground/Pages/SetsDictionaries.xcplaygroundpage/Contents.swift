@@ -144,34 +144,50 @@ if !mySet.contains("Zebra") {
 
 // [2] Declare an optional String-Set, but don't initialize it
 /* BEGIN CODE */
-
+var mySet: Set<String> = ["Zebra"]
+if !mySet.contains("Zebra") {
+    print("--> FAILURE: mySet does not contain Zebra")
+} else if !mySet.isSubset(of: animalSet) {
+    print("--> FAILURE: mySet is not a subset of animalSet")
+} else {
+    print("SUCCESS: mySet contains Zebra and is a subset of animalSet")
+}
 /* END CODE */
-
+var optionalSet: Set<String>?
 // [3] Insert "Giraffe" into optionalSet.
 /* BEGIN CODE */
-
+optionalSet?.insert("Giraffe")
 /* END CODE */
 
 // [4] Check if optionalSet contains "Giraffe"
 /* BEGIN CODE */
-
+if let set = optionalSet, set.contains("Giraffe") {
+    print("optionalSet contains Giraffe")
+} else {
+    print("optionalSet does not contain Giraffe")
+}
 /* END CODE */
 // <-- [RUN HERE] optionalSet should NOT contain Giraffe at this point
 
 // [5] Initialize optionalSet with "Cow", "Elephant"
 // (can be done in one line)
 /* BEGIN CODE */
-
+optionalSet = ["Cow", "Elephant"]
 /* END CODE */
 
 // [6] Insert "Giraffe" into optionalSet again
 /* BEGIN CODE */
-
+optionalSet?.insert("Giraffe")
 /* END CODE */
 
 // [7] Check if optionalSet contains "Giraffe"
 /* BEGIN CODE */
-
+if let set = optionalSet, set.contains("Giraffe") {
+    print("optionalSet contains Giraffe")
+} else {
+    print("optionalSet does not contain Giraffe")
+}
+print("optionalSet size: \(optionalSet?.count ?? 0)")
 /* END CODE */
 // <-- [RUN HERE] optionalSet SHOULD contain Giraffe at this point
 
@@ -179,7 +195,9 @@ print("optionalSet size: \(optionalSet?.count)")
 
 // [8] Insert "Giraffe" into optionalSet again
 /* BEGIN CODE */
+optionalSet?.insert("Giraffe")
 
+print("optionalSet size: \(optionalSet?.count ?? 0)")
 /* END CODE */
 
 print("optionalSet size: \(optionalSet?.count)")
