@@ -137,11 +137,9 @@ var numArr: [Int] = Array(repeating: 0, count: 5)
 
 // [1] Rewrite this code to use a loop
 /* BEGIN CODE */
-numArr[0] = 10
-numArr[1] = 20
-numArr[2] = 30
-numArr[3] = 40
-numArr[4] = 50
+
+for i in 0 ... 4 { numArr[i] = 10 + 10 * i }
+
 /* END CODE */
 print("numArr: \(numArr)")
 // <-- [RUN HERE] The output should be unchanged
@@ -160,6 +158,9 @@ var messages: [String: String] = [
 // [2] Print out each message ID and their contents.
 //     Reference the docs for the desired output format.
 print("\nMessage Data:")
+for (id, message) in messages {
+    print("\(id): \(message)")
+}
 /* BEGIN CODE */
 
 /* END CODE */
@@ -183,6 +184,11 @@ print("Goodbye!")
 // [3] Write a while loop which prints out the messages in order.
 //     Refer to the docs for tips & tricks.
 print("\n(WHILE) MESSAGES: ")
+var i = 0
+while (i < messageOrder.count) {
+    print("\(messageOrder[i]): \(messages[messageOrder[i]]!)")
+    i += 1
+}
 /* BEGIN CODE */
 
 /* END CODE */
@@ -191,20 +197,28 @@ print("\n(WHILE) MESSAGES: ")
 // [4] Do the same thing, but with a repeat-while loop
 print("\n(REPEAT-WHILE) MESSAGES: ")
 /* BEGIN CODE */
-
+i = 0
+repeat {
+    print("\(messageOrder[i]): \(messages[messageOrder[i]]!)")
+    i += 1
+} while (i < messageOrder.count)
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [5] Do the same thing, but with a for loop using default iterator
 print("\n(FOR ITERATOR) MESSAGES: ")
 /* BEGIN CODE */
-
+for id in messageOrder{
+    print("\(id): \(messages[id]!)")
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
 
 // [6] Do the same thing, but with a for loop using a range
 print("\n(FOR RANGE) MESSAGES: ")
 /* BEGIN CODE */
-
+for i in 0 ..< messageOrder.count {
+    print("\(messageOrder[i]): \(messages[messageOrder[i]]!)")
+}
 /* END CODE */
 // <-- [RUN HERE] Check if your output matches the example.
