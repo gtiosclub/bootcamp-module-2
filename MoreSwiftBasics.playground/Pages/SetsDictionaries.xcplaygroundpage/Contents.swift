@@ -166,17 +166,22 @@ if optionalSetUnwrapped.contains("Giraffe"){
 // [5] Initialize optionalSet with "Cow", "Elephant"
 // (can be done in one line)
 /* BEGIN CODE */
-optionalSet? += ["Cow", "Elephant"]
+optionalSet = ["Cow", "Elephant"]
 /* END CODE */
 
 // [6] Insert "Giraffe" into optionalSet again
 /* BEGIN CODE */
-
+optionalSet?.insert("Giraffe")
 /* END CODE */
 
 // [7] Check if optionalSet contains "Giraffe"
 /* BEGIN CODE */
-
+guard let optionalSetUnwrapped = optionalSet else{
+    fatalError()
+}
+if optionalSetUnwrapped.contains("Giraffe"){
+    print("SUCCESS: optionalSet contains Giraffe and is a subset of animalSet")
+}
 /* END CODE */
 // <-- [RUN HERE] optionalSet SHOULD contain Giraffe at this point
 
@@ -184,7 +189,7 @@ print("optionalSet size: \(optionalSet?.count)")
 
 // [8] Insert "Giraffe" into optionalSet again
 /* BEGIN CODE */
-
+optionalSet?.insert("Giraffe")
 /* END CODE */
 
 print("optionalSet size: \(optionalSet?.count)")
