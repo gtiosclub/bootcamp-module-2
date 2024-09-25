@@ -129,7 +129,7 @@ let animalSet: Set<String> = ["Giraffe", "Zebra", "Elephant", "Panda", "Lion"]
 
 // [1] Declare a String-Set with Zebra (can be done in one line)
 /* BEGIN CODE */
-
+var mySet: Set<String> = ["Zebra"]
 /* END CODE */
 
 // Validate your `mySet` declaration. Also note two useful functions of Set
@@ -144,24 +144,29 @@ if !mySet.contains("Zebra") {
 
 // [2] Declare an optional String-Set, but don't initialize it
 /* BEGIN CODE */
-
+var optionalSet: Set<String>?
 /* END CODE */
 
 // [3] Insert "Giraffe" into optionalSet.
 /* BEGIN CODE */
-
+optionalSet?.insert("Giraffe")
 /* END CODE */
 
 // [4] Check if optionalSet contains "Giraffe"
 /* BEGIN CODE */
-
+guard let optionalSetUnwrapped = optionalSet else{
+    fatalError()
+}
+if optionalSetUnwrapped.contains("Giraffe"){
+    print("SUCCESS: optionalSet contains Giraffe and is a subset of animalSet")
+}
 /* END CODE */
 // <-- [RUN HERE] optionalSet should NOT contain Giraffe at this point
 
 // [5] Initialize optionalSet with "Cow", "Elephant"
 // (can be done in one line)
 /* BEGIN CODE */
-
+optionalSet? += ["Cow", "Elephant"]
 /* END CODE */
 
 // [6] Insert "Giraffe" into optionalSet again
