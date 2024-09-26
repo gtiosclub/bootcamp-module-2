@@ -242,7 +242,9 @@ print("Alphabetical:   \(cities)\n")
 // [1] Use the .sort(by:) function to sort the array from shortest name to
 //     longest. Check the docs for reference material if needed
 /* BEGIN CODE */
-
+cities.sort { (city1, city2) -> Bool in
+    return city1.count < city2.count
+}
 /* END CODE */
 print("Length (.sort): \(cities)")
 
